@@ -1,0 +1,13 @@
+services:
+  streamlit:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      - GRAYLOG_HOST
+      - GRAYLOG_TOKEN
+      - CLICKHOUSE_HOST
+      - CLICKHOUSE_PORT
+      - CLICKHOUSE_USERNAME
+      - CLICKHOUSE_PASSWORD
+    restart: unless-stopped
